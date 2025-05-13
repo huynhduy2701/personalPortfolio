@@ -363,3 +363,113 @@ body{
     display: flex;
     justify-content: center;
 }
+
+/* Skills */
+.skills__container{
+    row-gap: 0;
+    /* row-gap là khoảng cách giữa các hàng khi bạn dùng layout dạng Grid hoặc Flex theo chiều dọc (flex-direction: column).
+    row-gap: 0; nghĩa là không có khoảng cách giữa các hàng (tức là các phần tử xếp theo chiều dọc sẽ "dính sát" nhau). */
+}
+.skills__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-2-5);
+    cursor: pointer;
+}
+.skills__icon, .skills__arrow{
+    font-size: 2rem;
+    color: var(--first-color);
+}
+.skills__icon{
+    margin-right: var(--mb-0-75);
+}
+.skills__title{
+    font-size: var(--h3-font-size);
+}
+.skills__subtitle{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+.skills__arrow{
+    margin-left: auto;
+    /* nó sẽ đẩy sang phải do đã sử dụng display flex  */
+    transition: .4s;
+
+}
+.skills__list{
+    row-gap: 1.5rem;
+    /* Dùng để tạo khoảng cách giữa các hàng trong layout dạng grid hoặc flex theo chiều dọc.
+    Nghĩa là: các kỹ năng (hoặc item bên trong .skills__list) sẽ cách nhau 1.5rem theo chiều dọc.
+📝  Lưu ý: row-gap chỉ hoạt động nếu .skills__list có display: grid hoặc display: flex (theo column). */
+    padding-left: 2.7rem;
+}
+.skills__titles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+}
+.skills__name{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+.skills__bar,
+.skills__percentage{
+    height: 5px;
+    border-radius: 0.25rem;
+}
+.skills__bar{
+    background-color: var(--first-color-lighter);
+}
+.skills__percentage{
+    display: block;
+    background-color: var(--first-color);
+}
+.skills__htmnl{
+    width: 90%;
+}
+.skills__js{
+    width: 60%;
+}
+.skills__react{
+    width: 80%;
+}
+.skills__css{
+    width: 50%;
+}
+.skills__php{
+    width: 70%;
+}
+.skills__node{
+    width: 60%;
+}
+.skills__firebase{
+    width: 95%;
+}
+.skills__python{
+    width: 50%;
+}
+.skills__figma{
+    width: 70%;
+}
+.skills__sketch{
+    width: 85%;
+}
+.skills__photoshop{
+    width: 95%;
+}
+.skills__close  .skills__list{
+    height: 0;
+    overflow: hidden;
+    /* Ẩn mọi nội dung bị tràn ra ngoài khung chiều cao (ở đây là 0).
+    Tức là ngay cả khi bên trong có nhiều nội dung, thì cũng không hiển thị ra ngoài. */
+}
+.skills__open .skills__list{
+    height: max-content;
+    /* Giá trị max-content làm cho phần tử cao vừa đủ để chứa toàn bộ nội dung bên trong.
+    Nó sẽ mở rộng chiều cao tùy theo nội dung, không bị giới hạn như height: 0 nữa.
+    Dùng để hiển thị nội dung đã bị ẩn trước đó (thường là khi user click mở accordion hoặc dropdown). */
+    margin-bottom: var(--mb-2-5);
+}
+.skills__open .skills__arrow{
+    transform: rotate(-180deg);
+}
