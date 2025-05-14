@@ -53,3 +53,40 @@ function toggleSkills(){
 skillsHeader.forEach((el)=>{
     el.addEventListener('click',toggleSkills);
 })
+
+
+// Qualfication Tabs 
+const tabs = document.querySelectorAll('[data-target]'),//tabs: lấy tất cả các phần tử có thuộc tính data-target, tương ứng với các nút tab
+      tabsContents = document.querySelectorAll('[data-content]');//lấy tất cả các phần tử có thuộc tính data-content, tương ứng với nội dung của từng tab (ví dụ: phần hiển thị Education và Work).
+// data-target là thuộc tính tùy chỉnh (custom attribute) mà bạn đã thêm vào các phần tử tab để xác định nội dung nào sẽ được hiển thị khi tab đó được chọn.
+// data-content là thuộc tính tùy chỉnh mà bạn đã thêm vào các phần tử nội dung để xác định nội dung nào sẽ được hiển thị khi tab đó được chọn.
+tabs.forEach(tab => {
+    tab.addEventListener('click',()=>{
+        // B1: Xác định mục tiêu tương ứng với tab
+        const target = document.querySelector(tab.dataset.target);
+        // "Lấy phần tử DOM mà id của nó khớp với giá trị trong thuộc tính data-target của tab hiện tại."
+        console.log('👉 Clicked tab:', tab);
+        console.log('🎯 Target content:', target);
+
+        // B2: Ẩn tất cả các nội dung
+         console.log('⛔ Hiding all tab contents...');
+        tabsContents.forEach(tabContent =>{
+            console.log('   Hiding:', tabContent);
+            tabContent.classList.remove('qualification__active');
+        })
+          // B3: Hiển thị nội dung tương ứng
+        console.log('✅ Showing target content:', target);
+        target.classList.add('qualification__active');
+
+         // B4: Xóa class active khỏi tất cả tab
+        console.log('🔁 Removing active class from all tabs...');
+        tabs.forEach(tab =>{
+             console.log('   Removing from tab:', tab);
+            tab.classList.remove('qualification__active');
+        })
+         // B5: Thêm class active cho tab được click
+        console.log('⭐ Adding active class to clicked tab');
+        tab.classList.add('qualification__active');
+         console.log('------------------------');
+    })
+})
