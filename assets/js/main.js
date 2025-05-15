@@ -90,3 +90,31 @@ tabs.forEach(tab => {
          console.log('------------------------');
     })
 })
+
+
+// Services Modal
+// Lấy tất cả các phần tử modal (hộp thoại)
+const modalViews = document.querySelectorAll('.services__modal'),
+// Lấy tất cả các nút "View More"
+modalBtns = document.querySelectorAll('.services__button'),
+// Lấy tất cả các nút đóng (❌)
+modalCloses = document.querySelectorAll('.services__modal-close');
+
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal');
+    console.log('👉 Clicked modal button:', modalBtns[modalClick]);
+    console.log('👉 Clicked index modalClick:', modalClick);
+}
+modalBtns.forEach((modalBtn,i)=>{
+    modalBtn.addEventListener('click', ()=>{
+        modal(i);// Gọi hàm mở modal theo vị trí i
+    })
+})
+modalCloses.forEach((modalClose)=>{
+    modalClose.addEventListener('click', ()=>{
+        modalViews.forEach((modalView)=>{
+            console.log("first modalView:", modalView);
+            modalView.classList.remove('active-modal');
+        })
+    })
+})
