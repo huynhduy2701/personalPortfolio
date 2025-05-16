@@ -43,8 +43,8 @@ body{
     /* margenes bottom  */
     /* .25rem= 4px,.5rem= 8px, .75rem= 12px, 1rem= 16px, 1.25rem= 20px, 1.5rem= 24px, 2rem= 32px, 2.5rem= 40px, 3rem= 48px,.. */ 
     --mb-0-25: .25rem;
-    --mb-0-5: .05rem;
-    --mb-0-75:.075rem;
+    --mb-0-5: .5rem;
+    --mb-0-75:0.75rem;
     --mb-1: 1rem;
     --mb-1-5: 1.5rem;
     --mb-2: 2rem;
@@ -140,6 +140,7 @@ body{
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
+    margin-top: 10px;
  }
  /* Nav */
  .nav{
@@ -336,6 +337,13 @@ body{
 .button--link:hover{
     background-color: transparent;
     color: var(--first-color-alt);
+}
+.button--white{
+    background-color: #fff;
+    color: var(--first-color);
+}
+.button--white:hover{
+    background-color: #fff;
 }
 /* About */
 .about__img{
@@ -638,4 +646,174 @@ body{
 .active-modal{
     opacity: 1;
     visibility: visible;
+}
+
+/* Portfolio */
+.portfolio__container{
+    overflow: initial !important;
+     padding-bottom: 3rem !important;
+    /* Khôi phục lại giá trị mặc định của trình duyệt (thường là visible)
+    Cho phép nội dung vượt ra ngoài phần tử được hiển thị lại (nếu trước đó bị ẩn) */
+}
+.portfolio__content{
+    padding: 0 1.5rem;
+}
+.portfolio__img{
+    width: 256px;
+    height: 300px;
+     object-fit: cover;
+    border-radius: .5rem;
+    justify-self: center;
+    /* Thuộc tính justify-self: center; được dùng ở đây để canh giữa phần tử .portfolio__img theo trục ngang, nhưng nó chỉ hoạt động nếu phần tử đó nằm trong một container có display: grid. */
+}
+.portfolio__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+}
+.portfolio__description{
+    margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__button:hover .button__icon{
+    transform: translateX(.25rem);
+}
+.swiper-button-next:after,
+.swiper-button-prev:after  {
+    content: '' ;
+    font-size: 1.5rem !important;
+}
+.swiper-portfolio-icon{
+    /* font-size: 1rem; */
+    color: var(--first-color);
+}
+.swiper-button-prev{
+    left: -.5rem !important; 
+}
+.swiper-button-next{
+    right: -.5rem !important;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: -2.5rem ;
+}
+.swiper-pagination-bullet-active{
+    background-color: var(--first-color) !important;
+}
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination-bullet{
+    outline: none;
+}
+
+
+/* Project in mind  */
+.project{
+    text-align: center;
+}
+.project__bg{
+    background-color: var(--first-color-second);
+    padding-top: 3rem;
+}
+.project__title{
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+.project__description{
+    margin-bottom: var(--mb-1-5);
+}
+.project__title,
+.project__description{
+    color: #fff;
+}
+.project__img{
+    width: 232px;
+    justify-self: center;
+    height: 100%;
+}
+
+/* Testimonial */
+.testimonial{
+    padding: 20px;
+}
+.testimonial__data, .testimonial__header{
+    display: flex;
+}
+.testimonial__data{
+    justify-content: space-between;
+    margin-bottom: var(--mb-1);
+}
+.testimonial__img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;         /* Giữ tỉ lệ, lấp đầy khung */
+    object-position: center;   /* Căn giữa nội dung bên trong ảnh */
+    margin-right: var(--mb-0-75);
+}
+.testimonial__name{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+.testimonial__client{
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+.testimonial__description{
+    margin-bottom: var(--mb-2-5);
+}
+.testimonial__icon-star{
+    color: var(--first-color);
+}
+
+/* Contact Me  */
+.contact__container{
+    row-gap: 3rem;
+}
+.contact__information{
+    display: flex;
+    margin-bottom: var(--mb-2);
+}
+.contact__icon{
+    font-size: 2rem;
+    color: var(--first-color);
+    margin-right: var(--mb-0-75);
+}
+.contact__title{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+.contact__subtitle{
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+.contact__content{
+    background-color: var(--input-color);
+    border-radius: .5rem;
+    padding: .75rem 1rem .25rem;
+}
+.contact__label{
+    font-size: var(--smaller-font-size);
+    color: var(--title-color);
+}
+.contact__input{
+    width: 100%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-size: var(--body-font);
+    font-size: var(--normal-font-size);
+    border: none;
+    outline: none;
+    padding: .25rem .5rem .5rem 0;
+}
+/* không thể sử dụng trực tiếp :focus, vì div (như .contact__content) không phải là phần tử có thể focus (non-focusable element). */
+.contact__content:focus-within .contact__label{
+    /* :focus-within – Khi bất kỳ phần tử con nào bên trong được focus
+    ✅ Dùng cho thẻ cha, để style thẻ đó nếu một phần tử con bên trong được focus. */
+    color: var(--first-color);
+    /* Pseudo-class	Kích hoạt khi nào?	Dùng để làm gì?
+:focus-visible	Khi phần tử focus bằng bàn phím (không phải chuột)	Tối ưu trải nghiệm truy cập bằng phím
+:focus-within	Khi bất kỳ phần tử con bên trong được focus	Style phần tử cha khi input được chọn */
+  
+}
+.contact__content:focus-within{
+  border: 1px solid var(--first-color);
 }

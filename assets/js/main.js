@@ -118,3 +118,33 @@ modalCloses.forEach((modalClose)=>{
         })
     })
 })
+
+// Swiper 
+let swiper = new Swiper(".portfolio__container", {
+      cssMode: true,
+      loop:true,    
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable:true,
+      },
+    });
+
+// Swiper Testimonial 
+let swiperTestimonial = new Swiper(".testimonial__container", {
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable:true,
+      },
+      breakpoints:{
+        568:{
+            slidesPerview:2,
+        }
+      }
+      
+      
+    });
