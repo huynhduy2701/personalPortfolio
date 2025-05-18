@@ -967,6 +967,9 @@ body.dark-theme{
 /*===== Media queries===== */
 /* for small devices  */
 @media screen and  (max-width:350px){
+    .portfolio{
+        display: block;
+    }
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -1196,7 +1199,7 @@ body.dark-theme{
 }
 
 /* for large device  */
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1000px) {
     .header{
         top: 0;
         bottom: initial;
