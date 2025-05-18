@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
     <!-- Swiper css  -->
@@ -22,7 +22,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
             <li class="nav__item">
-              <a href="#home" class="nav__link">
+              <a href="#home" class="nav__link active-link">
                 <i class="bx bx-home nav__icon"></i> Home
               </a>
             </li>
@@ -55,6 +55,8 @@
           <i class="bx bx-x nav__close nav__icon" id="nav-close"></i>
         </div>
         <div class="nav__btns">
+            <!-- Them change button  -->
+             <i class='bx bx-brightness-half change-theme' id="theme-button"></i>
           <div class="nav__toggle" id="nav-toggle">
             <i class="bx bx-customize"></i>
           </div>
@@ -734,7 +736,7 @@
             <div class="portfolio__container container swiper mySwiper ">
                 <div class="swiper-wrapper">
                     <!-- Portfolio 1 -->
-                    <div class="  portfolio__content grid swiper-slide">
+                    <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/images/images2.jpg" alt="" class="portfolio__img">
                         
                         <div class="portfolio__data">
@@ -990,6 +992,51 @@
             </div>
            </section>
     </main>
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">
+                        HuynhDuy
+                    </h1>
+                    <span class="footer__subtitle">
+                        Frontend Developer
+                    </span>
+                </div>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#services" class="footer__link">Services</a>
+                    </li>
+                     <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                     <li>
+                        <a href="#contact" class="footer__link">ContactMe</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="" class="footer__social" target="_blank">
+                        <i class='bx bxl-meta' ></i>
+                    </a>
+                    <a href="" class="footer__social" target="_blank">
+                        <i class='bx bxl-instagram' ></i>
+                    </a>
+                    <a href="" class="footer__social" target="_blank">
+                        <i class='bx bxl-github' ></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">&#169;Huynhduy 2025</p>
+        </div>
+     </footer>
+
+     <!-- Scroll top  -->
+      <a href="#home" class="scrollup " id="scroll-up">
+        <i class='bx bx-up-arrow-circle scrollip__icon'></i>
+      </a>
     <!-- Swiper js -->
     <script src="assets/js/swiper-bundle.js"></script>
     <script src="/assets/js/main.js"></script>
