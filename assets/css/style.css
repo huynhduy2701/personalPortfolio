@@ -1076,6 +1076,7 @@ body.dark-theme{
         top: 0;
         bottom: initial;
         padding: 1.5rem;
+        margin: 0;
     }
     .main,
     .footer__container{
@@ -1200,6 +1201,7 @@ body.dark-theme{
         top: 0;
         bottom: initial;
         padding: 1.5rem;
+        margin: 0;
     }
     .main,
     .footer__container{
