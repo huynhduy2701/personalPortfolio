@@ -967,9 +967,9 @@ body.dark-theme{
 /*===== Media queries===== */
 /* for small devices  */
 @media screen and  (max-width:350px){
-    .portfolio{
+    /* .portfolio{
         display: block;
-    }
+    } */
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
